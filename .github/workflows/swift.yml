@@ -13,11 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Xcode
-        uses: apple/setup-xcode@v2
-        with:
-          xcode-select: true
-          xcode-version: '13.2.1'
+      - name: Select Xcode version
+        run: sudo xcode-select --switch /Applications/Xcode_13.2.1.app/Contents/Developer
 
       - name: Install CocoaPods
         run: |
